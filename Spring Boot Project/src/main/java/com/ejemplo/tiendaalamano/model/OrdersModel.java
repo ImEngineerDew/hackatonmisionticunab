@@ -1,25 +1,18 @@
 package com.ejemplo.tiendaalamano.model;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "order")
-public class OrderModel
-{
+@Table(name = "orders")
+public class OrdersModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 100, nullable= false)
     private int total_value;
-
-    @Column(length = 100, nullable= false)
     private Date date_order;
-
-    @Column(length = 100, nullable= false)
     private Date date_deliver;
-
-    @Column(length = 100, nullable= false)
     private String payForm;
 
     @ManyToOne(fetch = FetchType.LAZY) //Por cada orden tiene un usuario, pero un usuario tiene muchas ordenes
@@ -75,4 +68,13 @@ public class OrderModel
     public void setUser(UserModel user) {
         this.user = user;
     }
+
+    public PayModel getPayment() {
+        return payment;
+    }
+
+    public void setPayment(PayModel payment) {
+        this.payment = payment;
+    }
 }
+

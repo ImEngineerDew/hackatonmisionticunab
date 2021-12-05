@@ -11,7 +11,7 @@ public class OrderedProductModel
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private OrderModel order;
+    private OrdersModel order;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private ProductModel product;
@@ -38,11 +38,11 @@ public class OrderedProductModel
         this.id = id;
     }
 
-    public OrderModel getOrder() {
+    public OrdersModel getOrder() {
         return order;
     }
 
-    public void setOrder(OrderModel order) {
+    public void setOrder(OrdersModel order) {
         this.order = order;
     }
 
