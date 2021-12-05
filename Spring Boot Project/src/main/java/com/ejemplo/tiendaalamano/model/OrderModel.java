@@ -25,6 +25,9 @@ public class OrderModel
     @ManyToOne(fetch = FetchType.LAZY) //Por cada orden tiene un usuario, pero un usuario tiene muchas ordenes
     private UserModel user;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private PayModel payment;
+
     public Long getId() {
         return id;
     }
