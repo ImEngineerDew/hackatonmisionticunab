@@ -1,5 +1,4 @@
 package com.ejemplo.tiendaalamano.model;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -23,7 +22,7 @@ public class OrderModel
     @Column(length = 100, nullable= false)
     private String payForm;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY) //Por cada orden tiene un usuario, pero un usuario tiene muchas ordenes
     private UserModel user;
 
     public Long getId() {

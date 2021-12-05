@@ -10,9 +10,22 @@ public class ProductModel
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String brand;
     private String category;
+
     private String stock;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private BrandModel brand;
+
+    public BrandModel getBrand() {
+        return brand;
+    }
+
+    public void setBrand(BrandModel brand) {
+        this.brand = brand;
+    }
+
+
 
     public Long getId() {
         return id;
@@ -28,14 +41,6 @@ public class ProductModel
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
     }
 
     public String getCategory() {
