@@ -15,9 +15,20 @@ public class OrderedProductModel
 
     @ManyToOne(fetch = FetchType.LAZY)
     private ProductModel product;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private CouponModel coupons;
+
     private int quantity;
     private int price;
 
+    public CouponModel getCoupons() {
+        return coupons;
+    }
+
+    public void setCoupons(CouponModel coupons) {
+        this.coupons = coupons;
+    }
 
     public Long getId() {
         return id;
